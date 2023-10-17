@@ -1,0 +1,34 @@
+# Ignore virtual environments
+*.env
+.venv/
+env/
+.python-version
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore database files
+db.sqlite3
+db.sqlite3-journal
+
+# Ignore media files
+media/
+
+# Ignore static files
+static/
+
+# Ignore test and coverage files
+.coverage
+.pytest_cache/
+coverage/
+htmlcov/
+.tox/
+.nox/
+
+# Ignore IDE project files
+.idea/
+.vscode/
+
+# Ignore local settings files
+local_settings*.py

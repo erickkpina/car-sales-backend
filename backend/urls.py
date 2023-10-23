@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from dealership import views
+from dealership.views import CarListAPIView
 
 router = routers.DefaultRouter()
-router.register(r'cars', views.CarView, 'car')
+#router.register(r'cars', views.CarView, 'car')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/cars/', CarListAPIView.as_view(), name='car-list')
 ]

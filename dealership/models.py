@@ -52,6 +52,7 @@ class Car(models.Model):
     maximum_capacity = models.IntegerField()
     doors = models.IntegerField()
     price = models.IntegerField()
+    sold = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.car_model.brand.name} {self.car_model.name} - {self.plate_number}"

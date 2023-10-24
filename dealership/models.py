@@ -68,15 +68,3 @@ class CarImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.car.car_model.brand.name} {self.car.car_model.name} - {self.car.plate_number}"
-
-
-
-"""
-class Vehicle (models.Model):
-    plate = models.CharField(max_length=120, default='')
-    def get_upload_path(instance, filename):
-        # Generate upload path dynamically based on the plate variable
-        return f'car/{instance.plate}/{filename}'
-
-    img = models.ImageField(upload_to=get_upload_path)
-"""

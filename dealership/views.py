@@ -1,8 +1,8 @@
 from rest_framework import generics
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.views import APIView
-from .models import Car
-from .serializers import CarSerializer, UserSerializer
+from .models import Car, Brand
+from .serializers import CarSerializer, UserSerializer, BrandSerializer
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 import jwt, datetime
@@ -18,6 +18,10 @@ class CarListAPIView(generics.ListAPIView):
         # Optionally, you can prefetch related images to optimize the query
         queryset = queryset.prefetch_related('carimage_set')
         return queryset
+
+class BrandListAPIView(generics.ListAPIView):
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializer
 
 class RegisterView(APIView):
     def post(self,request):
